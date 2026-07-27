@@ -66,7 +66,7 @@
   <tr>
     <td>Approximate location</td>
     <td>Only if you tap "Use my weather" in the AI Stylist and grant permission</td>
-    <td>Your coordinates, truncated to roughly 100 metres of precision, are sent to Open-Meteo, a weather service, to fetch current conditions. Location is never stored by us or sent anywhere else.</td>
+    <td>Your coordinates, truncated to roughly 100 metres of precision, are sent to Open-Meteo, a weather service, to fetch current conditions. We never store your location, and it is sent nowhere else.</td>
   </tr>
   <tr>
     <td>Purchase status</td>
@@ -84,7 +84,7 @@
 <h2>What we do not do</h2>
 <ul>
   <li>We do not sell or share your data with advertisers.</li>
-  <li>We do not use your photos to train AI models.</li>
+  <li>We do not use your photos to train AI models. Photos leave your device only for an AI feature you have asked for, and are then handled by that provider under the terms linked below.</li>
   <li>We do not track you across other apps or websites.</li>
   <li>We do not collect analytics that identify you personally.</li>
   <li>We do not make automated decisions that produce legal or similarly significant effects about you. Outfit suggestions are styling assistance, nothing more.</li>
@@ -102,16 +102,21 @@
 </ul>
 
 <h2>Service providers</h2>
+<p>We use four providers, each receiving only what it needs to deliver its function. Their own privacy terms govern what they do with it:</p>
 <ul>
-  <li><strong>Supabase</strong> — account authentication, wardrobe database, and image storage for signed-in users.</li>
-  <li><strong>Rork toolkit API</strong> — AI image processing (background removal, item identification, virtual try-on) and outfit and packing suggestion generation.</li>
-  <li><strong>RevenueCat</strong> — subscription management.</li>
-  <li><strong>Open-Meteo</strong> — weather lookup, only when you request it.</li>
+  <li><strong>Supabase</strong> — account authentication, wardrobe database, and image storage for signed-in users. <a href="https://supabase.com/privacy">Privacy policy</a>.</li>
+  <li><strong>Rork toolkit API</strong> — AI image processing (background removal, item identification, virtual try-on) and outfit and packing suggestion generation. <a href="https://rork.com/privacy">Privacy policy</a>.</li>
+  <li><strong>RevenueCat</strong> — subscription management. <a href="https://www.revenuecat.com/privacy">Privacy policy</a>.</li>
+  <li><strong>Open-Meteo</strong> — weather lookup, only when you request it. <a href="https://open-meteo.com/en/terms">Terms and privacy</a>.</li>
 </ul>
-<p>Each provider receives only what is needed to deliver its function, and none of them is permitted to use your data for their own purposes.</p>
 
 <h2>Where your data is processed</h2>
-<p>Some of these providers process data on servers outside the United Kingdom. Where that happens, we rely on the data-processing terms each provider publishes, which include the transfer safeguards required by UK data protection law. Data kept on your device stays on your device.</p>
+<p>Data kept on your device stays on your device. Some providers process data on servers outside the United Kingdom, and what protects that transfer differs by provider:</p>
+<ul>
+  <li><strong>Supabase</strong> and <strong>RevenueCat</strong> — covered by each company's data processing agreement, which incorporates the Standard Contractual Clauses and the UK Addendum to them approved by the Information Commissioner's Office.</li>
+  <li><strong>Rork toolkit API</strong> — receives the image or item names needed for the feature you are using, for the duration of that request. Rork's handling of that content is governed by its own privacy policy, linked above.</li>
+  <li><strong>Open-Meteo</strong> — operated from Switzerland, which the UK recognises as providing an adequate level of data protection. It receives truncated coordinates with no name, account, or device identifier attached, and states that server logs containing them are deleted within 90 days.</li>
+</ul>
 
 <h2>How long we keep it</h2>
 <ul>
