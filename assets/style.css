@@ -1,0 +1,260 @@
+/*
+ * Shared styling for the Frazer Tech Apps document site.
+ *
+ * Palette and type scale follow the VibeWardrobe brand reference
+ * (rork-vibewardrobe/BRANDING.md). Fonts are loaded from Google Fonts
+ * where available and fall back to system faces everywhere else, so the
+ * pages stay readable offline and in App Store review tooling.
+ */
+
+:root {
+  color-scheme: light dark;
+
+  --vw-lavender-300: #B8A9D9;
+  --vw-lavender-500: #8E7DBE;
+  --vw-lavender-700: #6A5C95;
+  --vw-mint-200: #B8DDD0;
+  --vw-cream-50: #FFFDF7;
+  --vw-cream-100: #F5EFE0;
+
+  --vw-ink: #1F2030;
+  --vw-slate: #4A4D5E;
+  --vw-cloud: #E8E9EE;
+  --vw-snow: #F8F9FB;
+  --vw-white: #FFFFFF;
+
+  --vw-font-display: "Fraunces", "Cormorant Garamond", Georgia, serif;
+  --vw-font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --vw-bg: var(--vw-snow);
+  --vw-surface: var(--vw-white);
+  --vw-text: var(--vw-ink);
+  --vw-text-muted: var(--vw-slate);
+  --vw-border: var(--vw-cloud);
+  --vw-accent: var(--vw-lavender-500);
+  --vw-gradient: linear-gradient(135deg, #D4C5EC 0%, #9BB3D4 50%, #A8D9C7 100%);
+
+  --vw-r-md: 14px;
+  --vw-r-lg: 22px;
+  --vw-r-pill: 999px;
+  --vw-shadow-1: 0 1px 2px rgba(31, 32, 48, .06), 0 2px 6px rgba(31, 32, 48, .04);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --vw-bg: #14151E;
+    --vw-surface: #1F2030;
+    --vw-text: #F5EFE0;
+    --vw-text-muted: #A8AAB8;
+    --vw-border: #2D2E3F;
+    --vw-accent: var(--vw-lavender-300);
+    --vw-gradient: linear-gradient(135deg, #3A3450 0%, #2A3A52 50%, #2D4A44 100%);
+    --vw-shadow-1: 0 1px 2px rgba(0, 0, 0, .3), 0 2px 6px rgba(0, 0, 0, .2);
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--vw-font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--vw-text);
+  background: var(--vw-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 32px 20px 80px;
+}
+
+/* ---------- Header ---------- */
+
+.masthead {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 24px;
+  margin-bottom: 32px;
+  border-bottom: 1px solid var(--vw-border);
+}
+
+.masthead img {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.masthead .titles { min-width: 0; }
+
+.masthead .app {
+  font-family: var(--vw-font-display);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+  display: block;
+}
+
+.masthead .publisher {
+  font-size: 13px;
+  color: var(--vw-text-muted);
+}
+
+.masthead a { color: inherit; text-decoration: none; }
+.masthead a:hover { color: var(--vw-accent); }
+
+/* ---------- Typography ---------- */
+
+h1 {
+  font-family: var(--vw-font-display);
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin: 0 0 8px;
+}
+
+h2 {
+  font-family: var(--vw-font-display);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.25;
+  margin: 2.2em 0 0.6em;
+}
+
+h3 {
+  font-family: var(--vw-font-body);
+  font-size: 17px;
+  font-weight: 600;
+  margin: 1.8em 0 0.4em;
+}
+
+p, li { font-size: 16px; }
+ul, ol { padding-left: 22px; }
+li { margin-bottom: 6px; }
+
+a { color: var(--vw-accent); text-underline-offset: 2px; }
+a:hover { color: var(--vw-lavender-700); }
+
+@media (prefers-color-scheme: dark) {
+  a:hover { color: var(--vw-cream-100); }
+}
+
+.updated {
+  color: var(--vw-text-muted);
+  font-size: 13px;
+  margin: 0 0 28px;
+}
+
+.lede {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--vw-text);
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--vw-text-muted);
+  margin: 0 0 10px;
+}
+
+/* ---------- Tables ---------- */
+
+.table-scroll {
+  overflow-x: auto;
+  margin: 20px 0;
+  border: 1px solid var(--vw-border);
+  border-radius: var(--vw-r-md);
+  background: var(--vw-surface);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 520px;
+  font-size: 15px;
+}
+
+th, td {
+  text-align: left;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--vw-border);
+  vertical-align: top;
+}
+
+th {
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: var(--vw-text-muted);
+}
+
+tr:last-child td { border-bottom: none; }
+
+/* ---------- Cards ---------- */
+
+.card {
+  display: block;
+  padding: 20px 22px;
+  border: 1px solid var(--vw-border);
+  border-radius: var(--vw-r-lg);
+  background: var(--vw-surface);
+  box-shadow: var(--vw-shadow-1);
+  text-decoration: none;
+  color: inherit;
+  margin-bottom: 14px;
+}
+
+a.card:hover { border-color: var(--vw-accent); }
+
+.card .card-title {
+  font-family: var(--vw-font-display);
+  font-size: 20px;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.card p { margin: 0; color: var(--vw-text-muted); font-size: 15px; }
+
+.hero {
+  background: var(--vw-gradient);
+  border-radius: var(--vw-r-lg);
+  padding: 28px 26px;
+  margin-bottom: 32px;
+  color: var(--vw-ink);
+}
+
+@media (prefers-color-scheme: dark) {
+  .hero { color: var(--vw-cream-100); }
+}
+
+.hero h1 { margin-bottom: 6px; }
+.hero p { margin: 0; font-size: 17px; }
+
+/* ---------- Footer ---------- */
+
+.footer {
+  margin-top: 56px;
+  padding-top: 20px;
+  border-top: 1px solid var(--vw-border);
+  font-size: 13px;
+  color: var(--vw-text-muted);
+}
+
+.footer a { color: var(--vw-text-muted); }
+.footer nav { margin-bottom: 8px; }
+.footer nav a { margin-right: 16px; }
+
+@media (max-width: 480px) {
+  h1 { font-size: 30px; }
+  h2 { font-size: 21px; }
+  .wrap { padding: 24px 16px 64px; }
+}
